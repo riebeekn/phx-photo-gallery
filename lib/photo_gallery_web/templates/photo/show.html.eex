@@ -1,0 +1,14 @@
+<span><%= link "Back", to: Routes.photo_path(@conn, :index) %></span>
+<div>
+  <strong>Uuid:</strong>
+  <%= @photo.uuid %>
+  <%= if Bodyguard.permit?(PhotoGallery.Gallery, :delete_photo, @current_user, @photo) do %>
+    <%= button("Delete", to: Routes.photo_path(@conn, :delete, @photo), method: :delete, data: [confirm: "Are you sure?"]) %>
+  <% end %>
+</div>
+<div>
+  <img src="<%= PhotoGallery.Photo.url({@photo.photo, @photo}, :thumb) %>"/>
+</div>
+<div>
+  <img src="<%= PhotoGallery.Photo.url({@photo.photo, @photo}) %>"/>
+</div>

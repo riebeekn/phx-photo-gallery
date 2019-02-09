@@ -31,6 +31,7 @@ defmodule PhotoGalleryWeb.Router do
     pipe_through [:browser, :protected]
 
     # Add your protected routes here
+    resources "/photos", PhotoController, except: [:edit, :update]
   end
 
   scope "/", PhotoGalleryWeb do

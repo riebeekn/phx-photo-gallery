@@ -14,6 +14,7 @@
           <ul>
             <%= if @current_user do %>
               <li>Signed in as: <%= @current_user.email %></li>
+              <li><%= link "Photos", to: Routes.photo_path(@conn, :index) %></li>
               <li><%= link "Sign out", to: Routes.pow_session_path(@conn, :delete), method: :delete %></li>
               <li><%= link "Edit account", to: Routes.pow_registration_path(@conn, :edit) %></li>
             <% else %>

@@ -1,0 +1,9 @@
+<%= link "Add new photo", to: Routes.photo_path(@conn, :new) %>
+<h1>Photos</h1>
+<%= for photo <- @photos do %>
+  <%=
+    PhotoGallery.Photo.url({photo.photo, photo}, :thumb)
+    |> img_tag()
+    |> link(to: Routes.photo_path(@conn, :show, photo))
+  %>
+<% end %>
