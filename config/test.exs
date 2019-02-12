@@ -16,3 +16,7 @@ config :photo_gallery, PhotoGallery.Repo,
   database: "photo_gallery_test",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
+
+# Arc config
+config :arc,
+ storage: Arc.Storage.Local

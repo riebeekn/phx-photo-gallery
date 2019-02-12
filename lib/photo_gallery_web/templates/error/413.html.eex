@@ -1,0 +1,2 @@
+<h4>The selected file(s) exceed the maximum allowed file size.  Please select fewer / smaller files and try again.</h4>
+<%= link "Go back", to: Routes.photo_path(@conn, :new) %>

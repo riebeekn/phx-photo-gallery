@@ -7,6 +7,9 @@ defmodule PhotoGallery.Photo do
   # To add a thumbnail version:
   @versions [:original, :thumb]
 
+  # Set permissions to public read for uploaded files
+  @acl :public_read
+
   # Whitelist file extensions:
   def validate({file, _}) do
     file_extension = file.file_name |> Path.extname() |> String.downcase()

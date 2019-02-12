@@ -16,15 +16,11 @@ defmodule PhotoGalleryWeb.PhotoController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn, %{"photo" => photo_params}) do
-    case Gallery.create_photo(conn.assigns.current_user, photo_params) do
-      {:ok, _photo} ->
-        conn
-        |> put_flash(:info, "Photo created successfully.")
-        |> redirect(to: Routes.photo_path(conn, :index))
-
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+  def create(conn, %{"photos" => photo_params}) do
+    with :ok <- Gallery.create_photos(conn.assigns.current_user, photo_params) do
+      conn
+      |> put_flash(:info, "Upload successful.")
+      |> redirect(to: Routes.photo_path(conn, :index))
     end
   end
 

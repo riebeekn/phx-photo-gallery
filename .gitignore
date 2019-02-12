@@ -41,4 +41,8 @@ npm-debug.log
 # variables.
 /config/*.secret.exs
 
+# ignore the file uploads directory
 /uploads
+
+# do not check .env into source control
+.env

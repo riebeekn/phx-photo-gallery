@@ -66,6 +66,17 @@ config :logger, level: :info
 # Note you can't rely on `System.get_env/1` when using releases.
 # See the releases documentation accordingly.
 
+# Arc config
+config :arc,
+ storage: Arc.Storage.S3,
+ bucket: {:system, "S3_BUCKET"},
+ asset_host: {:system, "ASSET_HOST"}
+
+config :ex_aws,
+ access_key_id: [{:system, "AWS_ACCESS_KEY_ID"}, :instance_role],
+ secret_access_key: [{:system, "AWS_SECRET_ACCESS_KEY"}, :instance_role],
+ region: "us-east-1"
+
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
 import_config "prod.secret.exs"

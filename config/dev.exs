@@ -73,3 +73,7 @@ config :photo_gallery, PhotoGallery.Repo,
   database: "photo_gallery_dev",
   hostname: "localhost",
   pool_size: 10
+
+# Arc config
+config :arc,
+ storage: Arc.Storage.Local

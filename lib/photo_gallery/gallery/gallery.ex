@@ -13,6 +13,12 @@ defmodule PhotoGallery.Gallery do
 
   def get_photo!(id), do: Repo.get!(Photo, id)
 
+  def create_photos(%User{} = user, attrs \\ %{}) do
+    Enum.each attrs["photos"], fn p ->
+      create_photo(user, %{"photo" => p})
+    end
+  end
+
   def create_photo(%User{} = user, attrs \\ %{}) do
     %Photo{}
     |> Photo.changeset(attrs)
