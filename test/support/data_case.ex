@@ -22,6 +22,7 @@ defmodule PhotoGallery.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import PhotoGallery.DataCase
+      import PhotoGallery.TestHelpers
     end
   end
 

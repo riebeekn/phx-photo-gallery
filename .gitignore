@@ -44,5 +44,8 @@ npm-debug.log
 # ignore the file uploads directory
 /uploads
 
+# ignore test output
+/test/output
+
 # do not check .env into source control
 .env

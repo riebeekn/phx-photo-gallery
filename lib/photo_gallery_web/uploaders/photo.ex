@@ -28,6 +28,6 @@ defmodule PhotoGallery.Photo do
 
   # Override the storage directory:
   def storage_dir(version, {file, scope}) do
-    "uploads/photos/"
+    Application.get_env(:photo_gallery, :upload_dir)
   end
 end

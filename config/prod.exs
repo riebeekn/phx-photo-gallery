@@ -77,6 +77,8 @@ config :ex_aws,
  secret_access_key: [{:system, "AWS_SECRET_ACCESS_KEY"}, :instance_role],
  region: "us-east-1"
 
+config :photo_gallery, upload_dir: "uploads/photos/"
+
 # Finally import the config/prod.secret.exs which should be versioned
 # separately.
 import_config "prod.secret.exs"

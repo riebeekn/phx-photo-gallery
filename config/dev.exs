@@ -77,3 +77,5 @@ config :photo_gallery, PhotoGallery.Repo,
 # Arc config
 config :arc,
  storage: Arc.Storage.Local
+
+config :photo_gallery, upload_dir: "uploads/photos/"

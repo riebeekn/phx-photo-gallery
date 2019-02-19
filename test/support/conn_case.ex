@@ -20,6 +20,7 @@ defmodule PhotoGalleryWeb.ConnCase do
       # Import conveniences for testing with connections
       use Phoenix.ConnTest
       alias PhotoGalleryWeb.Router.Helpers, as: Routes
+      import PhotoGallery.TestHelpers
 
       # The default endpoint for testing
       @endpoint PhotoGalleryWeb.Endpoint
